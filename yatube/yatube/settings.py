@@ -1,4 +1,7 @@
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 LOGIN_URL = 'users:login'
 
@@ -13,7 +16,7 @@ EMAIL_FILE_PATH = os.path.join(BASE_DIR, 'sent_emails')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-SECRET_KEY = '7a4ertafyo_hkbrx=1uf#%57a#-f(tt1xtxr3n_=tp@ex-^0oe'
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
